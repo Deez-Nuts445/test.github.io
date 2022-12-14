@@ -6,18 +6,6 @@ local player = game.Players.LocalPlayer
 local players = game.Players:GetPlayers()
 
 function a.GetClosestPlayer()
-  
-  local function createNotif(title,text,icon,duration,btn1,btn2,cb)
-		game.StarterGui:SetCore("SendNotification", {
-			Title = title; 
-			Text = text;
-			Icon = icon; 
-			Duration = duration;
-            Button1 = btn1;
-            Button2 = btn2;
-            Callback = cb
-		})
-	end
   -- Set the minimum distance to a large number
   local minDistance = math.huge
   -- Set the closest player to nil
@@ -37,7 +25,7 @@ function a.GetClosestPlayer()
     end
   end
   -- returns minDistance and closest player
-  createNotif(closestPlayer,"With a distance of "..minDistance,0,5)
+  return closestPlayer,"With a distance of "..minDistance
 	end
 end
 
